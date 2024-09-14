@@ -48,7 +48,9 @@ generadas por los modelos LLMs accediendo a información específica dentro de u
 datos externos, RAG reduce efectivamente las alucinaciones que podrían producir los modelos LLMs al no saber la respuesta y responder automaticamente.
 El sistema de implementación de RAG se lo puede observar en la siguiente grafica.
 
-Fig. 1: Diagrama del sistema de RAG.
+<div style="text-align:center">
+<img src="./images/RAG_workflow.png"/>
+</div>
 
 En el grafico se puede ver el flujo de la consulta, como antes de responder la consulta accede a documentos de consulta (vectores almacenados)
 para que el modelo LLM genere texto a partir de informacion recuperada en el sistema RAG. Esta implementación del sistema RAG consta de 3 partes:
@@ -179,14 +181,18 @@ se los puede ver en la figura de abajo, La mayoría de los documentos en kichwa 
 esto significa que los fragmentos son muy pequeños. De esta manera el modelo podría tener poca interpretacion del idioma Kichwa,
 la longuitud de los fragmentos puede ser debido a que la mayoria de documentos obtenidos son frases traducidas y no textos completos en Kichwa.
 
-Figura 2
+<div style="text-align:center">
+<img src="./images/phist.png"/>
+</div>
 
 Después de generar los embeddings se debe crear la indexación de estos para el sistema de consultas, esto se lo realiza con la libreria FAISS especializado
 de indexación para modelos LLMs, en esta parte también podemos visualizar algunas consultas que se realice con los embeddings
 de los fragmentos generados para la base de consulta, esto se lo realiza con una reducción de dimensionalidad con el
 modelo de UMAP (Uniform Manifold Approximation and Projection) de los embeddings creados, el resultado se puede observar en la figura de abajo,
 
-Figura 3
+<div style="text-align:center">
+<img src="./images/embedding.png"/>
+</div>
 
 Los queries generados se encuentran dentro del conjunto de embeddings de los documentos en Kichwa,
 Es interesante notar que los queries en Kichwa e inglés están cercanos entre sí, amientras que el query en español aparece rodeado por los documentos en español.
