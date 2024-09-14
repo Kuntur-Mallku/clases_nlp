@@ -86,7 +86,7 @@ realizado se implementó un RAG básico solo con estos tres pasos especificados.
 
 ## Metodologia
 
-Al descargar la base de datos, se divide cada documento por chunck de 512 de longitud, Esto es debido a que ese es el tamana maximo
+Al descargar la base de datos, se divide cada documento por chunck de 512 de longitud, obteniendo aproximadamente 157 mil fragmentos, Esto es debido a que ese es el tamano maximo
 de secuencia del modelo embedding usado para la indexacion de fragmentos, por lo que tendremos una base de fragmentos con los 130 documentos en Kichwa,
 para la implementación del sistema RAG.
 
