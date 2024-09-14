@@ -1,3 +1,9 @@
+---
+layout: default
+title: Clase NLP - Implementar RAG in modelo Llama
+theme: jekyll-theme-cayman
+---
+
 # Análisis Comparativo del Modelo Generativo Meta-Llama-3.1-8B: Implementación de RAG vs. Modelado Tradicional.
 
 ## Resumen
