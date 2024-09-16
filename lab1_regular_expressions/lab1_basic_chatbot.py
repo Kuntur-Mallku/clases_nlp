@@ -1,10 +1,21 @@
 import re
 
-greeting_pattern = re.compile(r"^[^a-z]*(hi|[h']?ello|hey|good\s(morn[gin']{0,3}|afternoon|even[gin']{0,3}))", re.IGNORECASE)
-weather_pattern = re.compile(r"\b(weather|forecast|temperature)\b", re.IGNORECASE)
-stock_market_pattern = re.compile(r"\b(stock|market|stocks|shares)\b", re.IGNORECASE)
-follow_up_pattern = re.compile(r"\b(yes|have|anything else)\b", re.IGNORECASE)
-goodbye_pattern = re.compile(r"\b(goodbye|bye|see you)\b", re.IGNORECASE)
+greeting_pattern = re.compile(
+    r"^(?:\W*)(hi|hello|hey|greetings|good\s(?:morning|afternoon|evening))\b",
+    re.IGNORECASE)
+weather_pattern = re.compile(
+    r"\b(?:how(?:'s| is)?|what(?:'s| is)?|tell me about)?\s*(?:the\s*)?(weather|forecast|temp(?:erature)?|climate|rain|sun(?:ny)?|cloud(?:y)?)\b",
+    re.IGNORECASE)
+stock_market_pattern = re.compile(
+    r"\b(?:can you tell me about|how(?:'s| is)?|what(?:'s| is)?|give me details on)?\s*(stocks?|market|shares?|trading|investment|buy(?:ing)?|sell(?:ing)?)\b",
+    re.IGNORECASE)
+follow_up_pattern = re.compile(
+    r"\b(?:yes|no|sure|maybe|not really|anything else|that's all|I don't know)\b"
+    ,re.IGNORECASE)
+goodbye_pattern = re.compile(
+    r"\b(?:goodbye|bye|see you|take care|later|farewell|so long|I'm out)\b"
+    ,re.IGNORECASE)
+
 
 def chatbot_response(user_input, question_count=0):
     answer = ''
